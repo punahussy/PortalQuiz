@@ -22,23 +22,59 @@ namespace Portalquiz
         //Словарь действий по нажатию клавиш
         private static Dictionary<Keys, OnPressCommand> Commands = new Dictionary<Keys, OnPressCommand>
         {
-            { Keys.W, () => Form1.player.DeltaY -= Speed},
-            { Keys.S, () => Form1.player.DeltaY += Speed},
-            { Keys.A, () => Form1.player.DeltaX -= Speed},
-            { Keys.D, () => Form1.player.DeltaX += Speed},
-            { Keys.Up,() => Form1.player.DeltaY -= Speed},
-            { Keys.Down, () => Form1.player.DeltaY += Speed },
-            { Keys.Left, () => Form1.player.DeltaX -= Speed },
-            { Keys.Right, () => Form1.player.DeltaX += Speed },
+            { Keys.W, MoveUp },
+            { Keys.S, MoveDown },
+            { Keys.A, MoveLeft },
+            { Keys.D, MoveRight },
+            { Keys.Up, MoveUp},
+            { Keys.Down, MoveDown },
+            { Keys.Left, MoveLeft },
+            { Keys.Right, MoveRight },
             { Keys.Escape,
 
                () =>  
                {
                 var answer = MessageBox.Show("Вы точно хотите выйти?", "Выход их игры", MessageBoxButtons.YesNo);
-                if(answer == DialogResult.Yes) 
-                    Application.Exit();
+                if(answer == DialogResult.Yes)
+                   {
+                       MusicPLayer.StopMusic();
+                       Application.Exit();
+                   }
                }
             },
         };
+
+
+        static void MoveUp()
+        {
+            Form1.player.DeltaY -= Speed;
+            Form1.player.Turn(directions.up);
+        }
+
+        static void MoveDown()
+        {
+            Form1.player.DeltaY += Speed;
+            Form1.player.Turn(directions.down);
+        }
+
+        static void MoveRight()
+        {
+            Form1.player.DeltaX += Speed;
+            Form1.player.Turn(directions.right);
+        }
+
+        static void MoveLeft()
+        {
+            Form1.player.DeltaX -= Speed;
+            Form1.player.Turn(directions.left);
+        }
+    }
+
+    public enum directions
+    {
+        up,
+        down,
+        right,
+        left
     }
 }

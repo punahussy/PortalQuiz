@@ -45,17 +45,13 @@ namespace Portalquiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            System.Media.SoundPlayer musicPlayer = new System.Media.SoundPlayer();
-            musicPlayer.SoundLocation = @"C:\Users\raket\OneDrive\ed\C#\FormGeme\FormGeme\bin\Debug\music\music.wav";
-            musicPlayer.Load();
-            musicPlayer.Play();
+            MusicPLayer.PlayMusic();
             TopMost = true;
         }
 
         //Обновление на тик таймера
         private void Timer_tick(object sender, EventArgs e)
         {
-            
             label1.Text = currentLevelNumber.ToString() + " Уровень";
             currentLevel.ElapsedTime++;
             label2.Text = "Время: " + Math.Round(currentLevel.ElapsedTime / 30, 1).ToString();

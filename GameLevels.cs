@@ -19,6 +19,18 @@ namespace Portalquiz
               W - - - - - - - - - - - - - - W
               W W W W W W W W W W W W W W W W",
 
+            //0.5 уровень
+            @"W W W W W W W W W W W W W W W W
+              W S S S S S S S S S S S S S S W
+              W S S S S - - F - - S S S S S W              
+              W S S S - S W W W - - S S S S W
+              W S S S - W - C G W - S S S S W
+              W S S S - W - r - W - S S S S W
+              W S S S - W W - W W R S S S S W
+              W S S S - - g - - r - S S S S W
+              W S S S S S S S S S S S S S S W
+              W W W W W W W W W W W W W W W W",
+
             //1 уровень
              @"W W W W W W W W W W W W W W W W
               W - - W - r - o - G g W - - - W
@@ -79,6 +91,7 @@ namespace Portalquiz
               W - W W W W - r G - - - S - g W
               W - - - S - - W W W W W W W W W
               W W W W W W W",
+
               
         };
     }

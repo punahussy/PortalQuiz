@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 
@@ -7,44 +8,44 @@ namespace Portalquiz
     //Объект игрок
     public class Player
     {
-        public Bitmap Texture
-        { get
-            {
-                return textures.playerRight; 
-            }
-        }
+        public Bitmap Texture { get; private set; }
+
+        private Dictionary<directions, Bitmap> playerTextures = new Dictionary<directions, Bitmap>
+        {
+            { directions.up, textures.playerUp },
+            { directions.down, textures.playerDown },
+            { directions.right, textures.playerRight },
+            { directions.left, textures.playerLeft }
+        };
 
         public int X { get; private set; }
         public int Y { get; private set; }
         public int DeltaX { get; set; }
         public int DeltaY { get; set; }
 
-        public int Width { get; }
-        public int Height { get; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         public Tuple<int, int> startPos;
 
         //Конструктор
         public Player()
         {
-            Width = Form1.TileSize;
-            Height = Form1.TileSize;
+            Width = Form1.TileSize - 8;
+            Height = Form1.TileSize - 8;
+            Texture = textures.playerRight;
         }
 
         //Конструктор с начальными координатами
-        public Player(Tuple<int, int> coords)
+        public Player(Tuple<int, int> coords) : this()
         {
-            Width = Form1.TileSize;
-            Height = Form1.TileSize;
             startPos = coords;
             X = coords.Item1;
             Y = coords.Item2;
         }
 
-        public Player(int x, int y)
+        public Player(int x, int y) : this()
         {
-            Width = Form1.TileSize;
-            Height = Form1.TileSize;
             startPos = Tuple.Create(x, y);
             X = x;
             Y = y;
@@ -121,6 +122,11 @@ namespace Portalquiz
         {
             X = playerCoordinates.Item1;
             Y = playerCoordinates.Item2;
+        }
+
+        public void Turn(directions direction)
+        {
+            Texture = playerTextures[direction];
         }
     }
 }

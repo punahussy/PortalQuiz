@@ -64,6 +64,7 @@
     <Compile Include="Decoration.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelCreator.cs" />
+    <Compile Include="MusicPLayer.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Portal.cs" />
     <Compile Include="PressurePlate.cs" />
@@ -171,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musica.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
