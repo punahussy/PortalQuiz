@@ -12,16 +12,27 @@ namespace Portalquiz
         static System.Media.SoundPlayer musicPlayer = 
             new System.Media.SoundPlayer(textures.musica);
 
-        static Thread MusicPlayerThread = new Thread(() => musicPlayer.Play());
+        bool isPlaying;
 
-        public static void PlayMusic()
+        public void Toggle()
         {
-            MusicPlayerThread.Start();
+            if (isPlaying)
+                Stop();
+            else
+                Play();
         }
 
-        public static void StopMusic()
+        public void Play()
         {
-            MusicPlayerThread.Abort();
+            musicPlayer.Play();
+            isPlaying = true;
+            
+        }
+
+        public void Stop()
+        {
+            musicPlayer.Stop();
+            isPlaying = false;
         }
     }
 }

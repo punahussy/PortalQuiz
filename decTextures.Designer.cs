@@ -73,9 +73,19 @@ namespace Portalquiz {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap puddle1 {
+        internal static System.Drawing.Bitmap grass11 {
             get {
-                object obj = ResourceManager.GetObject("puddle1", resourceCulture);
+                object obj = ResourceManager.GetObject("grass11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap puddle {
+            get {
+                object obj = ResourceManager.GetObject("puddle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

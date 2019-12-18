@@ -15,6 +15,9 @@ namespace Portalquiz
         //Размер текстуры клетки
         public const int TileSize = 64;
 
+        //Воспроизедение музыки 
+        public static MusicPLayer musPlayer = new MusicPLayer();
+
         #region Уровни
         //Текущий уровень
         private Level currentLevel = Levels[0];
@@ -45,8 +48,8 @@ namespace Portalquiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MusicPLayer.PlayMusic();
-            TopMost = true;
+            musPlayer.Play();
+            TopMost = false;
         }
 
         //Обновление на тик таймера

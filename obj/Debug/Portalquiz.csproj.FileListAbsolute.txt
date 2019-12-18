@@ -10,3 +10,14 @@ C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.pdb
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.textures.resources
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.decTextures.resources
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.csprojAssemblyReference.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.csprojAssemblyReference.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.exe
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.pdb
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\bin\Debug\Portalquiz.exe.config
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\bin\Debug\Portalquiz.exe
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\bin\Debug\Portalquiz.pdb
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.decTextures.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.Properties.Resources.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.textures.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.csproj.GenerateResource.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\simpleGame\obj\Debug\Portalquiz.csproj.CoreCompileInputs.cache
