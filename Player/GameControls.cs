@@ -31,6 +31,8 @@ namespace Portalquiz
             { Keys.Left, MoveLeft },
             { Keys.Right, MoveRight },
             { Keys.M, () => Form1.musPlayer.Toggle() },
+            { Keys.X, () => Form1.player.Move(Form1.player.X + 1, Form1.player.Y + 1) },
+            { Keys.Z, () => Form1.player.Move(Form1.player.X - 1, Form1.player.Y - 1)},
             { Keys.Escape,
 
                () =>  
@@ -49,25 +51,29 @@ namespace Portalquiz
         static void MoveUp()
         {
             Form1.player.DeltaY -= Speed;
-            Form1.player.Turn(directions.up);
+            if (!Form1.debug)
+                Form1.player.Turn(directions.up);
         }
 
         static void MoveDown()
         {
             Form1.player.DeltaY += Speed;
-            Form1.player.Turn(directions.down);
+            if (!Form1.debug)
+                Form1.player.Turn(directions.down);
         }
 
         static void MoveRight()
         {
             Form1.player.DeltaX += Speed;
-            Form1.player.Turn(directions.right);
+            if (!Form1.debug)
+                Form1.player.Turn(directions.right);
         }
 
         static void MoveLeft()
         {
             Form1.player.DeltaX -= Speed;
-            Form1.player.Turn(directions.left);
+            if (!Form1.debug)
+                Form1.player.Turn(directions.left);
         }
 
 

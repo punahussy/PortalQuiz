@@ -23,6 +23,7 @@ namespace Portalquiz
         //Останавливает игрока при столкновении
         public void OnCollision(Player player)
         {
+
             if (player.DeltaX < 0)
                 player.DeltaX = 0;
             else if (player.DeltaX > 0)

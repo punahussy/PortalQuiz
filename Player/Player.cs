@@ -31,9 +31,13 @@ namespace Portalquiz
         //Конструктор
         public Player()
         {
-            Width = Form1.TileSize - 8;
-            Height = Form1.TileSize - 8;
-            Texture = textures.playerRight;
+            Width = Form1.TileSize - Form1.TileSize;
+            Height = Form1.TileSize - Form1.TileSize;
+            if (!Form1.debug)
+                Texture = textures.playerRight;
+            else
+                Texture = textures.player;
+
         }
 
         //Конструктор с начальными координатами

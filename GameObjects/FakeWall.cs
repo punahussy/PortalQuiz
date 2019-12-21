@@ -17,12 +17,13 @@ namespace Portalquiz.GameObjects
 
         public int Height { get; }
 
-        public Bitmap Texture => textures.wall;
+        public Bitmap Texture { get { return textures.wall2; } }
 
         public FakeWall(int x, int y)
         {
             X = x;
             Y = y;
+            Width = Height = Form1.TileSize;
         }
 
         public void OnCollision(Player player)

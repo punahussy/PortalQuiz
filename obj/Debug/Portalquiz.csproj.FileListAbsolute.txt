@@ -1,4 +1,3 @@
-C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.Form1.resources
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.Properties.Resources.resources
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.csproj.GenerateResource.cache
 C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Debug\Portalquiz.csproj.CoreCompileInputs.cache

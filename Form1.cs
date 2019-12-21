@@ -9,6 +9,7 @@ namespace Portalquiz
 
     public partial class Form1 : Form
     {
+        public static bool debug = true;
         //Размеры поля в клетках по TileSize пиксела
         const int TilesWide = 16;
         const int TilesHeight = 10;
@@ -48,7 +49,7 @@ namespace Portalquiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            musPlayer.Play();
+            //musPlayer.Play();
             TopMost = false;
         }
 
@@ -81,7 +82,8 @@ namespace Portalquiz
             }
 
             //Отрисовка игрока
-            g.DrawImage(player.Texture, new Rectangle(player.X, player.Y, player.Width, player.Height));
+            g.DrawImage(player.Texture, new Rectangle(player.X, player.Y, TileSize, TileSize));
+
             
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Portalquiz.GameObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace Portalquiz
             {'L', (x,y) => new Decoration(x,y,decTextures.puddle, 2)},
             {'S', (x,y) => new Spikes(x,y) },
             {'A', (x,y) => new Decoration(x,y,decTextures.water, 2) },
+            {'w', (x,y) => new FakeWall(x,y) },
 
         };
 
@@ -112,38 +114,31 @@ namespace Portalquiz
                 }
             }
             //Создание порталов уровня
-            currentLevel.LevelPortals = CreatePortals(inPortals, outPortals);
+            foreach (var portal in CreatePortals(inPortals, outPortals))
+                currentLevel.LevelObjects.Add(portal);
             return currentLevel;
         }
 
         //Создает список порталов
-        private static List<Portal> CreatePortals(Dictionary<char, Portal> inPortals,
+        private static IEnumerable<IGameObject> CreatePortals(Dictionary<char, Portal> inPortals,
                                                   Dictionary<char, Portal> outPortals)
         {
             foreach (var key in inPortals.Keys)
             {
                 if (outPortals.ContainsKey(Char.ToLower(key)))
                     inPortals[key].LinkedPortal = outPortals[Char.ToLower(key)];
+                IGameObject currentPortal = (IGameObject)inPortals[key];
+                yield return currentPortal;
             }
-            return inPortals.Values.ToList();
         }
 
         //Размещает объект obj на уровне level
         private static void Place(Level level, IGameObject obj)
         {
-            if (obj is Wall)
-                level.LevelWalls.Add((Wall)(obj));
-            else if (obj is Decoration)
-                level.LevelDecorations.Add((Decoration)obj);
-            else if (obj is Finish)
-                level.LevelFinish = new Finish(obj.X, obj.Y);
-            else if (obj is Spikes)
-                level.LevelSpikes.Add((Spikes)obj);
-            else if (obj is PressurePlate)
-                level.LevelPressurePlates.Add((PressurePlate)obj);
+            if (obj is Finish finish)
+                level.SetFinish(finish);
             else
-                throw new NotImplementedException("Установка этого игрового объекта не назначена");
-
+                level.LevelObjects.Add(obj);
         }
 
     }

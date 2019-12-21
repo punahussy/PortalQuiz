@@ -1,0 +1,11 @@
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\bin\Release\Portalquiz.exe.config
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\bin\Release\Portalquiz.exe
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\bin\Release\Portalquiz.pdb
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.csprojAssemblyReference.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.decTextures.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.Properties.Resources.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.textures.resources
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.csproj.GenerateResource.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.csproj.CoreCompileInputs.cache
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.exe
+C:\Users\raket\OneDrive\ed\C#\Portalquiz\Portalquiz\obj\Release\Portalquiz.pdb

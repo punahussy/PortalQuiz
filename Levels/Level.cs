@@ -10,23 +10,11 @@ namespace Portalquiz
         //Координаты игрока
         public Tuple<int,int> PlayerCoordinates;
 
-        //Стены уровня
-        public List<Wall> LevelWalls = new List<Wall>();
-
-        //Порталы уровня
-        public List<Portal> LevelPortals = new List<Portal>();
-
-        //Шипы уровня
-        public List<Spikes> LevelSpikes = new List<Spikes>();
-
         //Финиш уровня
-        public Finish LevelFinish { get; set; }
+        public Finish LevelFinish { get; private set; }
 
-        //Кнопки уровня
-        public List<PressurePlate> LevelPressurePlates = new List<PressurePlate>();
-
-        //Декорации на уровне
-        public List<Decoration> LevelDecorations = new List<Decoration>();
+        //Все игровые объекты уровня 
+        public List<IGameObject> LevelObjects = new List<IGameObject>();
 
         //Время в тиках, затраченное на прохождение
         private int elapsedTime;
@@ -36,14 +24,11 @@ namespace Portalquiz
             set
             {
                 elapsedTime = (int)value;
-                if (LevelSpikes != null)
+                SpikesTimer++;
+                if (SpikesTimer == (30 * SpikesPeriod))
                 {
-                    SpikesTimer++;
-                    if (SpikesTimer == (30 * SpikesPeriod))
-                    {
-                        SpikesTimer = 0;
-                        ToggleSpikes();
-                    }
+                    SpikesTimer = 0;
+                    ToggleSpikes();
                 }
             }
         }
@@ -58,12 +43,18 @@ namespace Portalquiz
             LevelFinish = new Finish(600, 200);
         }
 
+        public void SetFinish(Finish finish)
+        {
+            LevelFinish = finish;
+        }
+
         //Переключение шипов
         private void ToggleSpikes()
         {
-            foreach (Spikes spikes in LevelSpikes)
+            foreach (var obj in LevelObjects)
             {
-                spikes.IsActive = !spikes.IsActive;
+                if (obj is Spikes spikes)
+                    spikes.IsActive = !spikes.IsActive;
             }
 
         }
@@ -71,30 +62,18 @@ namespace Portalquiz
         //Реализация IEnumerable для перебора объектов уровня
         public IEnumerator GetEnumerator()
         {
-            if (LevelWalls != null)
+            if (LevelObjects != null)
             {
-                foreach (Wall wall in LevelWalls)
-                    yield return wall;
-            }
-            if (LevelSpikes != null)
-            {
-                foreach (Spikes spikes in LevelSpikes)
-                    yield return spikes;
-            }
-            if (LevelPortals != null)
-            {
-                foreach (Portal portal in LevelPortals)
+                foreach (IGameObject obj in LevelObjects)
                 {
-                    yield return portal;
-                    if (portal.LinkedPortal != null)
+                    yield return obj;
+                    if (obj is Portal portal)
+                    {
                         yield return portal.LinkedPortal;
+                    }
                 }
             }
-            if (LevelDecorations != null)
-            {
-                foreach (Decoration decoration in LevelDecorations)
-                    yield return decoration;
-            }            
+            
             yield return LevelFinish;
         }
     }
